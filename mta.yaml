@@ -1,4 +1,4 @@
-_schema-version: '3.1'
+_schema-version: "3.1"
 ID: bookshop_sample
 version: 1.0.0
 description: "A simple CAP project."
@@ -24,6 +24,7 @@ modules:
     requires:
       - name: bookshop_sample-auth
       - name: bookshop_sample-db
+      - name: mail-sender
 
   - name: bookshop_sample-db-deployer
     type: hdb
@@ -48,3 +49,5 @@ resources:
     parameters:
       service: hana
       service-plan: hdi-shared
+  - name: mail-sender
+    type: org.cloudfoundry.existing-service
