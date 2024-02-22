@@ -6,4 +6,5 @@ service CatalogService {
     entity Books as projection on my.Books;
 
     action handleNotification();
+    action sum();
 }

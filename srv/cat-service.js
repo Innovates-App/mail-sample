@@ -13,6 +13,10 @@ class CatalogService extends cds.ApplicationService {
       a = 1;
     });
 
+    this.on("sum", (somma) => {
+      return (somma = "somma");
+    });
+
     this.on("handleNotification", async (req) => {
       const transporter = nodemailer.createTransport({
         service: "gmail",
