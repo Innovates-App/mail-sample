@@ -4,21 +4,33 @@ Welcome to your new project.
 
 It contains these folders and files, following our recommended project layout:
 
-File or Folder | Purpose
----------|----------
-`db/` | your domain models and data go here
-`srv/` | your service models and code go here
-`package.json` | project metadata and configuration
-`readme.md` | this getting started guide
+| File or Folder | Purpose                              |
+| -------------- | ------------------------------------ |
+| `db/`          | your domain models and data go here  |
+| `srv/`         | your service models and code go here |
+| `package.json` | project metadata and configuration   |
+| `readme.md`    | this getting started guide           |
 
+## Prerequisite
+
+After cloning this repo, create **.env** file on root folder and enter this variable
+
+`EMAIL_USER`=_write mail sender_
+`EMAIL_PASSWORD`=_write password for mail sender_
+`EMAIL_RECIPIENT`=_write mail reciver_
 
 ## Next Steps
 
-- Open a new terminal and run `cds watch` 
-- (in VS Code simply choose _**Terminal** > Run Task > cds watch_)
-- Start adding content, for example, a [db/schema.cds](db/schema.cds).
+- Install dependencies: `npm i`
+- Login to CF: `cf login`
+- Build: `mbt build`
+- Deploy: `deploy mta_archives/bookshop_sample_1.0.0.mtar`
+- Check if service keys exist for db and auth service: `cf service-keys SERVICE_INSTANCE_NAME`
+- Create service keys if necessary: `cf create-service-key SERVICE_INSTANCE_NAME SERVICE_INSTANCE_KEY`
+- Binding to service instances: `cds bind -2 SERVICE_INSTANCE_NAME:SERVICE_INSTANCE_KEY`
+- Check if file .cdsrc-private.json has been created after service binding
+- Start: `cds watch --profile hybrid`
 
-
-## Learn More
-
-Learn more at https://cap.cloud.sap/docs/get-started/.
+If an error like _username and password not accepted when using nodemailer_ occured,
+please refer to this link: https://stackoverflow.com/questions/45478293/username-and-password-not-accepted-when-using-nodemailer
+and create App password for gmail account
