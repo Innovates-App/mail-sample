@@ -34,6 +34,17 @@ It contains these folders and files, following our recommended project layout:
 - Check if file .cdsrc-private.json has been created after service binding
 - Start: `cds watch --profile hybrid`
 
-If an error like _username and password not accepted when using nodemailer_ occured,
-please refer to this link: https://stackoverflow.com/questions/45478293/username-and-password-not-accepted-when-using-nodemailer
+## Tips
+
+1. If an error like
+
+_Async operation for service binding between app ".." and service instance "jobscheduler" failed with "10009 CF-UnableToPerform bind could not be completed: Service broker error: Service broker jobscheduler-broker failed with: No xsuaa service instance bound to the application. Please bind xsuaa service instance to the application before binding jobscheduler service instance_
+
+occured, please delete reference to jobscheduler on mta.yaml file, proceed with build and deploy. Insert again job scheduler reference on mta.yaml, build and deploy again.
+
+2. If an error like
+
+_username and password not accepted when using nodemailer_
+
+occured during call handleNotification() action, please refer to this link: https://stackoverflow.com/questions/45478293/username-and-password-not-accepted-when-using-nodemailer
 and create App password for gmail account
