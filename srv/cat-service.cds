@@ -5,6 +5,6 @@ service CatalogService @(path: '/browse') {
     @readonly
     entity Books as projection on my.Books;
 
-    action handleNotification();
-    action sum();
+    action   handleNotification();
+    function sum() returns String;
 }

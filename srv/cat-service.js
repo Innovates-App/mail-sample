@@ -13,8 +13,8 @@ class CatalogService extends cds.ApplicationService {
       a = 1;
     });
 
-    this.on("sum", (somma) => {
-      return (somma = "somma");
+    this.on("sum", function () {
+      return "somma";
     });
 
     this.on("handleNotification", async (req) => {
