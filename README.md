@@ -13,7 +13,10 @@ It contains these folders and files, following our recommended project layout:
 
 ## Prerequisite
 
-After cloning this repo, create **.env** file on root folder and enter this variable
+1. You need to create a Job Scheduling Service instance called **jobscheduler** on SAP BTP Subaccount
+   or, if you have an existing instance, you need to properly edit mta.yaml file
+
+2. After cloning this repo, create **.env** file on root folder and enter this variable
 
 `EMAIL_USER`=_write mail sender_
 `EMAIL_PASSWORD`=_write password for mail sender_

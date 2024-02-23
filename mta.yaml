@@ -24,7 +24,7 @@ modules:
     requires:
       - name: bookshop_sample-auth
       - name: bookshop_sample-db
-      - name: mail-sender
+      - name: jobscheduler
 
   - name: bookshop_sample-db-deployer
     type: hdb
@@ -49,5 +49,5 @@ resources:
     parameters:
       service: hana
       service-plan: hdi-shared
-  - name: mail-sender
+  - name: jobscheduler
     type: org.cloudfoundry.existing-service
